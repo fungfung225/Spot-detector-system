@@ -16,11 +16,5 @@ The figure above shows the main hardware components in the system. Basically, th
 ![螢幕擷取畫面 2022-06-29 224559](https://user-images.githubusercontent.com/90837134/176466189-bc6db7f2-408c-45f6-9c72-159272dccdf9.png)
 
 
-The application core serves as a control layer coordinating threads and different modules so that the system works together efficiently with limited resources(number of CPU cores, RAM size, computational power, etc.).
-The power manager will communicate with the UPS(Uninterruptible Power Supply). In case of a power outage of the production line, it will notify the application core and the corresponding event log will be recorded and uploaded to the cloud. Then the nano will turn itself off safely.
-GPIO Handler is responsible for sending and receiving signals from our custom-made PCB. For example, it can turn on and off the lightbox, start/stop the alarm, and communicate with the MCU.
-The frame processing engine contains the core functions. It will capture the video feed, pre-process each frame, detect abnormalities, render result images and send them to the user interface.
-Logger is a daemon thread that runs in the background recording the system status. The Cloud handler is in charge of exchanging data between the nano and Google Cloud.
-
 ## Result
 ![螢幕擷取畫面 2022-06-30 004111](https://user-images.githubusercontent.com/90837134/176490648-99df6bd7-9887-4625-8dad-80811e65c423.png)
